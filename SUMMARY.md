@@ -9,4 +9,5 @@
        * [List All Indices](_list_all_indices.md)
        * [Create an Index](_create_an_index.md)
        * [Index and Query a Document](_index_and_query_a_document.md)
+       * Delete an Index
 
