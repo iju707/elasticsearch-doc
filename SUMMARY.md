@@ -12,4 +12,5 @@
        * [Delete an Index](_delete_an_index.md)
    * [Modifying Your Data](_modifying_your_data.md)
        * [Updating Documents](_updating_documents.md)
+       * Deleting Documents
 
