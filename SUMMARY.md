@@ -7,4 +7,5 @@
    * [Exploring Your Cluster](_exploring_your_cluster.md)
        * [Cluster Health](_cluster_health.md)
        * [List All Indices](_list_all_indices.md)
+       * Create an Index
 
