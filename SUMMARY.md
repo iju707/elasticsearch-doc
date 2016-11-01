@@ -10,8 +10,8 @@
        * [Create an Index](_create_an_index.md)
        * [Index and Query a Document](_index_and_query_a_document.md)
        * [Delete an Index](_delete_an_index.md)
-       * Batch Processing
    * [Modifying Your Data](_modifying_your_data.md)
+       * Batch Processing
        * [Updating Documents](_updating_documents.md)
        * [Deleting Documents](_deleting_documents.md)
 
