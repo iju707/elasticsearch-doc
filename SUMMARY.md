@@ -14,4 +14,11 @@
        * [Updating Documents](_updating_documents.md)
        * [Deleting Documents](_deleting_documents.md)
        * [Batch Processing](_batch_processing.md)
+   * [Exploring Your Data](_exploring_your_data.md)
+       * [The Search API](_the_search_api.md)
+       * [Introducing the Query Language](_introducing_the_query_language.md)
+       * [Executing Searches](_executing_searches.md)
+       * [Executing Filters](_executing_filters.md)
+       * [Executing Aggregations](_executing_aggregations.md)
+   * [Conclusion](_conclusion.md)
 
