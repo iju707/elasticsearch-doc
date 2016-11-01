@@ -1,5 +1,5 @@
 # Summary
 
 * [Introduction](README.md)
-* [First Chapter](getting-startedmd.md)
+* [시작하기](getting-startedmd.md)
 
