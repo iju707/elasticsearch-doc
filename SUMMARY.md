@@ -5,5 +5,5 @@
    * [Basic Contcepts](_basic_contcepts.md)
    * [Installation](_installation.md)
    * [Exploring Your Cluster](_exploring_your_cluster.md)
-       * Cluster Health
+       * [Cluster Health](_cluster_health.md)
 
