@@ -11,5 +11,5 @@
        * [Index and Query a Document](_index_and_query_a_document.md)
        * [Delete an Index](_delete_an_index.md)
    * [Modifying Your Data](_modifying_your_data.md)
-       * Updating Documents
+       * [Updating Documents](_updating_documents.md)
 
