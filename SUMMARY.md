@@ -3,6 +3,6 @@
 * [Introduction](README.md)
 * [시작하기](getting-startedmd.md)
    * [Basic Contcepts](_basic_contcepts.md)
-   * [Installation](_installation.md)
+   * [Installation](_installationmd.md)
    * Exploring Your Cluster
 
