@@ -4,5 +4,5 @@
 * [시작하기](getting-startedmd.md)
    * [Basic Contcepts](_basic_contcepts.md)
    * [Installation](_installation.md)
-   * Exploring Your Cluster
+   * [Exploring Your Cluster](_exploring_your_cluster.md)
 
