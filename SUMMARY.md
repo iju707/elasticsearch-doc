@@ -20,5 +20,5 @@
        * [Executing Searches](_executing_searches.md)
        * [Executing Filters](_executing_filters.md)
        * [Executing Aggregations](_executing_aggregations.md)
-   * [Conclusion](conclusionmd.md)
+   * [결론](conclusionmd.md)
 
