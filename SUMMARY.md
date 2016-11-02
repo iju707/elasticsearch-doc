@@ -4,7 +4,7 @@
 * [시작하기](getting-startedmd.md)
    * [기본 개념](_basic_contcepts.md)
    * [설치하기](_installation.md)
-   * [Exploring Your Cluster](_exploring_your_cluster.md)
+   * [클러스터에 대해 알아보자](_exploring_your_cluster.md)
        * [Cluster Health](_cluster_health.md)
        * [List All Indices](_list_all_indices.md)
        * [Create an Index](_create_an_index.md)
