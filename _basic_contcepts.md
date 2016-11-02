@@ -47,7 +47,7 @@ Elasticsearch는 준 실시간 검색 플랫폼 입니다. 문서가 검색가�
 
 기본적으로 Elasticsearch의 인덱스는 5개의 파편으로 구성되고 1개의 복제본을 가지게 될 것 입니다. 다시 말해 적어도 2개 이상의 노드로 구성하면 인덱스는 5개의 파편과 5개의 복제파편(1개의 완벽한 복제본)으로 구성되어 인덱스당 총 10개의 파편이 있을 것 입니다.
 
-> Elasticsearch의 파편은 Lucene 인덱스입니다. 1개의 단일 Lucene 인덱스에 가능한 최대 문서 개수가 있습니다. [LUCENE-5843](https://issues.apache.org/jira/browse/LUCENE-5843)에 따르면 그 한계는 2,147,483,519(= Integer.MAX_VALUE - 128)개의 문서입니다. 추가로 [_cat/shards](https://www.elastic.co/guide/en/elasticsearch/reference/current/cat-shards.html) API를 통해서 파편 사이즈를 모니터링 할 수 있습니다.
+> Elasticsearch의 파편은 Lucene 인덱스입니다. 1개의 단일 Lucene 인덱스에 가능한 최대 문서 개수가 있습니다. [LUCENE-5843](https://issues.apache.org/jira/browse/LUCENE-5843)에 따르면 그 한계는 2,147,483,519(= Integer.MAX_VALUE - 128)개의 문서입니다. 추가로 [?[_cat/shards](https://www.elastic.co/guide/en/elasticsearch/reference/current/cat-shards.html) API를 통해서 파편 사이즈를 모니터링 할 수 있습니다.
 
 기본적인 개념을 가지고 재미난 것을 더 해보도록 하겠습니다.
 
