@@ -11,7 +11,7 @@
        * [문서 색인/쿼리](_index_and_query_a_document.md)
        * [인덱스 삭제](_delete_an_index.md)
    * [데이터를 수정해보자](_modifying_your_data.md)
-       * [Updating Documents](_updating_documents.md)
+       * [문서 수정](_updating_documents.md)
        * [Deleting Documents](_deleting_documents.md)
        * [Batch Processing](_batch_processing.md)
    * [Exploring Your Data](exploringyour_data.md)
