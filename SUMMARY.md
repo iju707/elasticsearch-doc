@@ -12,7 +12,7 @@
        * [인덱스 삭제](_delete_an_index.md)
    * [데이터를 수정해보자](_modifying_your_data.md)
        * [문서 수정](_updating_documents.md)
-       * [Deleting Documents](_deleting_documents.md)
+       * [문서 삭제](_deleting_documents.md)
        * [Batch Processing](_batch_processing.md)
    * [Exploring Your Data](exploringyour_data.md)
        * [The Search API](_the_search_api.md)
