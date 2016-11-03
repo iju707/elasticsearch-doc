@@ -9,3 +9,38 @@ request body 방식이 좀 더 다양한 것을 할 수 있고 JSON 포맷을 �
 ```
 curl -XGET 'localhost:9200/bank/_search?q=*&sort=account_number:asc&pretty'
 ```
+명령에 대해서 하나씩 보겠습니다. *bank* 인덱스에 대하여 *_search*를 사용해서 검색을 합니다. ```q=*```는 Elasticsearch에게 인덱스에 있는 모든 문서를 조회하라는 것 입니다. ```pretty```는 이전에도 언급되었듯 JSON 양식으로 출력하라는 것 입니다.
+
+응답결과는 다음과 같습니다.(일부 생략)
+```json
+{
+  "took" : 63,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 5,
+    "successful" : 5,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 1000,
+    "max_score" : null,
+    "hits" : [ {
+      "_index" : "bank",
+      "_type" : "account",
+      "_id" : "0",
+      "sort": [0],
+      "_score" : null,
+      "_source" : {"account_number":0,"balance":16623,"firstname":"Bradshaw","lastname":"Mckenzie","age":29,"gender":"F","address":"244 Columbus Place","employer":"Euron","email":"bradshawmckenzie@euron.com","city":"Hobucken","state":"CO"}
+    }, {
+      "_index" : "bank",
+      "_type" : "account",
+      "_id" : "1",
+      "sort": [1],
+      "_score" : null,
+      "_source" : {"account_number":1,"balance":39225,"firstname":"Amber","lastname":"Duke","age":32,"gender":"M","address":"880 Holmes Lane","employer":"Pyrami","email":"amberduke@pyrami.com","city":"Brogan","state":"IL"}
+    }, ...
+    ]
+  }
+}
+```
+응답결과를 세부적으로 보면 다음과 같습니다.
