@@ -8,7 +8,7 @@
        * [클러스터 상태확인](_cluster_health.md)
        * [인덱스 목록 확인](_list_all_indices.md)
        * [인덱스 생성](_create_an_index.md)
-       * [Index and Query a Document](_index_and_query_a_document.md)
+       * [문서 색인/쿼리](_index_and_query_a_document.md)
        * [Delete an Index](_delete_an_index.md)
    * [Modifying Your Data](_modifying_your_data.md)
        * [Updating Documents](_updating_documents.md)
