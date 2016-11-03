@@ -25,4 +25,31 @@ curl -XPUT 'localhost:9200/customer/external/2?pretty&pretty' -d'
 ```
 ID가 2인 신규 문서가 색인되었습니다.
 
-인덱싱할 때 ID 항목은 선택사항입니다. 만약 명기하지 않으면 Elasticsearch가 해당 문서에 사용할 ID를 임의적으로 생성합니다. Elasticsearch가 만든(또는 이전 예제에 명기한) 실제 ID는 인덱스 API 호출
+인덱싱할 때 ID 항목은 선택사항입니다. 만약 명기하지 않으면 Elasticsearch가 해당 문서에 사용할 ID를 임의적으로 생성합니다. Elasticsearch가 만든(또는 이전 예제에 명기한) 실제 ID는 인덱스 API 호출 결과에 표시됩니다.
+
+다음은 특정 ID를 지정하지 않고 문서를 인덱싱하는 방법입니다.
+```
+curl -XPOST 'localhost:9200/customer/external?pretty&pretty' -d'
+{
+  "name": "Jane Doe"
+}'
+```
+기존에 사용하던 PUT 방식을 쓰지 않고 POST 방식으로 전달합니다.
+
+응답결과는 다음과 같습니다.
+```json
+{
+  "_index" : "customer",
+  "_type" : "external",
+  "_id" : "AVgotx1q1BaGYWSkn0SH",
+  "_version" : 1,
+  "result" : "created",
+  "_shards" : {
+    "total" : 2,
+    "successful" : 1,
+    "failed" : 0
+  },
+  "created" : true
+}
+```
+내용 중 *_id*를 보시면 ID 항목이 자동으로 생성됨(*AVgotx1q1BaGYWSkn0SH*)을 알 수 있습니다.
