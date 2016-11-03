@@ -11,4 +11,6 @@ curl -XGET 'localhost:9200/_cat/indices?v&pretty'
 health status index    uuid                   pri rep docs.count docs.deleted store.size pri.store.size
 yellow open   customer 95SQ4TSUT7mWBT7VNHH67A   5   1          0            0       260b           260b
 ```
-두번째 명령은 현재 우리가 *customer*라는 이름을 가지는 1개의 인덱스를 가지고 있고 
+두번째 명령은 현재 우리가 *customer*라는 이름을 가지는 1개의 인덱스를 가지고 있고 5개의 주파편과 1개의 복제본(기본값)을 가지고 있으며 0개의 문서가 있다는 것을 알 수 있습니다.
+
+*customer* 인덱스의 상태가 *yellow*인 것을 알 수 있습니다. 이전에 이야기했듯 *yellow* 상태는 일부 복제본이 아직 할당되지 않은 상태입니다. 
