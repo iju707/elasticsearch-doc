@@ -5,7 +5,7 @@
    * [기본 개념](_basic_contcepts.md)
    * [설치하기](_installation.md)
    * [클러스터에 대해 알아보자](_exploring_your_cluster.md)
-       * [Cluster Health](_cluster_health.md)
+       * [클러스터 상태확인](_cluster_health.md)
        * [List All Indices](_list_all_indices.md)
        * [Create an Index](_create_an_index.md)
        * [Index and Query a Document](_index_and_query_a_document.md)
