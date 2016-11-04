@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [시작하기](getting-startedmd.md)
+* [시작하기](getting-started.md)
    * [기본 개념](_basic_contcepts.md)
    * [설치하기](_installation.md)
    * [클러스터에 대해 알아보자](_exploring_your_cluster.md)
@@ -14,11 +14,11 @@
        * [문서 수정](_updating_documents.md)
        * [문서 삭제](_deleting_documents.md)
        * [배치 처리](_batch_processing.md)
-   * [데이터를 조회해보자](exploringyour_data.md)
+   * [데이터를 조회해보자](_exploring_your_data.md)
        * [검색 API](_the_search_api.md)
        * [쿼리 언어란?](_introducing_the_query_language.md)
        * [검색을 해보자](_executing_searches.md)
        * [필터링을 해보자](_executing_filters.md)
        * [집계를 해보자](_executing_aggregations.md)
-   * [결론](conclusionmd.md)
+   * [결론](_conclusion.md)
 
