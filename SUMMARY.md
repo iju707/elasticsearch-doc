@@ -16,7 +16,7 @@
        * [배치 처리](_batch_processing.md)
    * [데이터를 조회해보자](exploringyour_data.md)
        * [검색 API](_the_search_api.md)
-       * [Introducing the Query Language](_introducing_the_query_language.md)
+       * [쿼리 언어 설명](_introducing_the_query_language.md)
        * [Executing Searches](_executing_searches.md)
        * [Executing Filters](_executing_filters.md)
        * [Executing Aggregations](_executing_aggregations.md)
