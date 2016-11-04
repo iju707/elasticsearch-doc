@@ -14,4 +14,19 @@
 * [매핑 조회](indices-get-mapping.md)
 * [속성 매핑 조회](indices-get-field-mapping.md)
 * [타입 유무확인](indices-types-exists.md)
-* 
+
+## 별칭 관리
+* [인덱스 별칭](indices-aliases.md)
+
+## 인덱스 설정
+* [인덱스 설정 수정](indices-update-setting.md)
+* [설정 조회](indices-get-settings.md)
+* [분석](indices-analyze.md)
+* [인덱스 템플릿](indices-templates.md)
+
+## 복제본 설정
+* [복제인덱스 복제](indices-shadow-replicas.md)
+
+## 모니터링
+* [인덱스 상태](indices-stats.md)
+* [인덱스 
