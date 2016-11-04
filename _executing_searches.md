@@ -15,7 +15,7 @@ curl -XPOST 'localhost:9200/bank/_search?pretty' -d'
 
 SQL과 비교하자면 ```SELECT```와 ```FROM```사이의 속성 목록과 같은 내용이라고 보시면 됩니다.
 
-다시 ```query``` 부분으로 돌아가보겠습니다. 직전에 모든 문서의 목록을 가져오려면 ```match_all```을 사용한다고 했습니다. 이젠 [```match``` 쿼리](../query-dsl-match-query.md)에 대해서 알아보겠습니다. 이 것은 특정 속성(또는 속성들)에 일치하는 문서를 검색할 수 있습니다.
+다시 ```query``` 부분으로 돌아가보겠습니다. 직전에 모든 문서의 목록을 가져오려면 ```match_all```을 사용한다고 했습니다. 이젠 [```match``` 쿼리](query-dsl-match-query.md)에 대해서 알아보겠습니다. 이 것은 특정 속성(또는 속성들)에 일치하는 문서를 검색할 수 있습니다.
 
 아래 예제는 *account_number*가 20인 문서를 검색하는 것 입니다.
 ```
@@ -45,7 +45,7 @@ curl -XPOST 'localhost:9200/bank/_search?pretty' -d'
   "query": { "match_phrase": { "address": "mill lane" } }
 }'
 ```
-다음으로 [```bool(ean)``` 쿼리](../query-dsl-bool-query.md)에 대하여 알아보겠습니다. ```bool```은 참/거짓 로직을 사용하여 쿼리를 좀 더 다양하게 확장할 수 있게 해줍니다.
+다음으로 [```bool(ean)``` 쿼리](query-dsl-bool-query.md)에 대하여 알아보겠습니다. ```bool```은 참/거짓 로직을 사용하여 쿼리를 좀 더 다양하게 확장할 수 있게 해줍니다.
 
 ```match```를 사용해서 한 것과 동일하게 아래 예제도 *address*에 "mill"과 "lane" 모두를 포함하고 있는 문서를 검색해보겠습니다.
 ```
