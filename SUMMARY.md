@@ -18,7 +18,7 @@
        * [검색 API](_the_search_api.md)
        * [쿼리 언어란?](_introducing_the_query_language.md)
        * [검색을 해보자](_executing_searches.md)
-       * [Executing Filters](_executing_filters.md)
+       * [필터링을 해보자](_executing_filters.md)
        * [Executing Aggregations](_executing_aggregations.md)
    * [결론](conclusionmd.md)
 
