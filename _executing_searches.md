@@ -93,3 +93,23 @@ curl -XPOST 'localhost:9200/bank/_search?pretty' -d'
   }
 }'
 ```
+위 예제를 보시면 ```bool must_not```은 하위에 정의된 조건을 모두 만족하지 않는 문서를 반환하게 됩니다.
+
+```bool```에 ```must```, ```should```, ```must_not```의 조건을 동시에 사용할 수 있습니다. 게다가 ```bool``` 내부에 ```bool```을 계층적으로 사용하여 좀 더 고차원적인(또는 복잡한) 논리를 만들어 낼 수 도 있습니다.
+
+아래 예제는 *age*가 40이고 ID(aho, 아이다호)주에 살지 않는 계정을 반환하는 예제입니다.
+```
+curl -XPOST 'localhost:9200/bank/_search?pretty' -d'
+{
+  "query": {
+    "bool": {
+      "must": [
+        { "match": { "age": "40" } }
+      ],
+      "must_not": [
+        { "match": { "state": "ID" } }
+      ]
+    }
+  }
+}'
+```
