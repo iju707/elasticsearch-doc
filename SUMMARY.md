@@ -21,5 +21,5 @@
        * [필터링을 해보자](_executing_filters.md)
        * [집계를 해보자](_executing_aggregations.md)
    * [결론](_conclusion.md)
-* 인덱스 API
+* [인덱스 API](indices.md)
 
