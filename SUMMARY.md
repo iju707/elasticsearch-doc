@@ -19,6 +19,6 @@
        * [쿼리 언어란?](_introducing_the_query_language.md)
        * [검색을 해보자](_executing_searches.md)
        * [필터링을 해보자](_executing_filters.md)
-       * [Executing Aggregations](_executing_aggregations.md)
+       * [집계를 해보자](_executing_aggregations.md)
    * [결론](conclusionmd.md)
 
