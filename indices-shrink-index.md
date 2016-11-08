@@ -51,3 +51,13 @@ curl -XPOST 'localhost:9200/my_source_index/_shrink/my_target_index?pretty' -d'
   }
 }'
 ```
+> ```index.number_of_shards``` 항목은 원본 인덱스의 약수가 되어야 합니다.<br>
+> ```bset_compression``` 옵션은 추후 [강제 병합](indices-forcemerge.md)와 같은 인덱스의 신규 쓰기가 발생할 때 적용됩니다.
+> 
+> 매핑정보는 ```_shrink``` 요청에 포함되지 않습니다. 그리고 모든 ```index.analysis.*```와 ```index.similarity.*```는 기존 원본 인덱스의 설정을 따라갑니다.
+
+## 인덱스 축소 처리 모니터링
+
+
+## 파편활성화 대기
+인덱스 축소 명령은 축소된 인덱스를 새로 생성하기 때문에, 인덱스 생성시 [파편활성화 대기](indices-create-index.md#create-index-wait-for-active-shards) 설정을 따라갑니다.
