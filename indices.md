@@ -28,5 +28,13 @@
 * [복제인덱스 복제](indices-shadow-replicas.md)
 
 ## 모니터링
-* [인덱스 상태](indices-stats.md)
-* [인덱스 
+* [인덱스 통계](indices-stats.md)
+* [인덱스 세그먼트](indices-segments.md)
+* [인덱스 복구](indices-recovery.md)
+* [인덱스 복제본 정보](indices-shards-stores.md)
+
+## 상태관리
+* [캐시 초기화](indices-clearcache.md)
+* [인덱스 갱신](indices-refresh.md)
+* [인덱스 정리](indices-flush.md)
+* [인덱스 강제병합](indices-forcemerge.md)
