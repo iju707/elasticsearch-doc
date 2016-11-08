@@ -25,4 +25,5 @@
    * [인덱스 생성](indices-create-index.md)
    * [인덱스 삭제](indices-delete-index.md)
    * [인덱스 조회](indices-get-index.md)
+   * 인덱스 유무확인
 
