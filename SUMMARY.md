@@ -22,5 +22,5 @@
        * [집계를 해보자](_executing_aggregations.md)
    * [결론](_conclusion.md)
 * [인덱스 API](indices.md)
-   * 인덱스 생성
+   * [인덱스 생성](indices-create-index.md)
 
