@@ -57,7 +57,10 @@ curl -XPOST 'localhost:9200/my_source_index/_shrink/my_target_index?pretty' -d'
 > 매핑정보는 ```_shrink``` 요청에 포함되지 않습니다. 그리고 모든 ```index.analysis.*```와 ```index.similarity.*```는 기존 원본 인덱스의 설정을 따라갑니다.
 
 ## 인덱스 축소 처리 모니터링
+축소 처리과정은 [cat 복구 API](cat-recovery.md)를 통해 추적하거나, [클러스터 상태확인 API](cluster-health.md)의 ```wait_for_status```를 *yellow*로 설정하여 모든 주 파편이 적재될 때까지 대기할 수 있습니다.
 
+```_shrink``` API는 다른 파편이 적재되기도 전에 대상 인덱스의 정보가 클러스터에 등록되면 결과를 반환합니다. 이 시점에는 모든 파편의 상태는 ```unassigned```가 됩니다. 여러가지 이유로 인하여 대상 인덱스가 축소할 노드에 적재되지 않는 경우 주파편은 적재될 때 까지 ```unassigned``` 상태로 남아있을 것 입니다.
 
+주파편이 적재되면, 상태는 ```initializing```으로 변경이 되고, 축소 처리를 시작합니다. 축소 처리가 끝나면 파편의 상태는 ```active```로 변경됩니다. 이 시점이 되면 Elasticsearch는 다른 복제본 적재를 시작하고 주파편을 다른 노드에 재분배할 지 결정합니다.
 ## 파편활성화 대기
 인덱스 축소 명령은 축소된 인덱스를 새로 생성하기 때문에, 인덱스 생성시 [파편활성화 대기](indices-create-index.md#create-index-wait-for-active-shards) 설정을 따라갑니다.
