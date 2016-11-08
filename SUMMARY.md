@@ -24,4 +24,5 @@
 * [인덱스 API](indices.md)
    * [인덱스 생성](indices-create-index.md)
    * [인덱스 삭제](indices-delete-index.md)
+   * 인덱스 조회
 
