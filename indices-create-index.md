@@ -105,4 +105,4 @@ curl -XPUT 'localhost:9200/test?pretty' -d'
 ```
 curl -XPUT 'localhost:9200/test?wait_for_active_shards=2&pretty'
 ```
-```wait_for_active_shards```에 대한 상세한 정보는 [여기](doc-index_.md)를 참고하시기 바랍니다.
+```wait_for_active_shards```에 대한 상세한 정보는 [여기](doc-index_.md#index-wait-for-active-shards)를 참고하시기 바랍니다.
