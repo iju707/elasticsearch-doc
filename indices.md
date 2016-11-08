@@ -31,7 +31,7 @@
 * [인덱스 통계](indices-stats.md)
 * [인덱스 세그먼트](indices-segments.md)
 * [인덱스 복구](indices-recovery.md)
-* [인덱스 복제본 정보](indices-shards-stores.md)
+* [인덱스 파편 정보](indices-shards-stores.md)
 
 ## 상태관리
 * [캐시 초기화](indices-clearcache.md)
