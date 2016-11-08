@@ -49,3 +49,22 @@ curl -XPUT 'localhost:9200/twitter?pretty' -d'
 > *settings* 섹션에 *index* 섹션을 꼭 명기할 필요는 없습니다.
 
 인덱스를 생성할 때 사용되는 다른 많은 설정에 대해서는 [인덱스 모듈](index-modules.md)를 참고하시기 바랍니다.
+## 매핑
+인덱스를 생성할 때 1개 이상의 매핑을 정의할 수 있습니다.
+```
+curl -XPUT 'localhost:9200/test?pretty' -d'
+{
+    "settings" : {
+        "number_of_shards" : 1
+    },
+    "mappings" : {
+        "type1" : {
+            "properties" : {
+                "field1" : { "type" : "text" }
+            }
+        }
+    }
+}'
+```
+## 별칭
+인덱스를 생성할 때 다수의 [별칭](indices-aliases.md)을 지정할 수 있습니다.
