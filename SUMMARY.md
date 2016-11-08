@@ -31,4 +31,5 @@
        * [인덱스 축소](indices-shrink-index.md)
        * [인덱스 롤오버](indices-rollover-index.md)
    * 매핑 관리
+       * 매핑 추가
 
