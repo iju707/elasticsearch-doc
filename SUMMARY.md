@@ -31,7 +31,7 @@
        * [인덱스 축소](indices-shrink-index.md)
        * [인덱스 롤오버](indices-rollover-index.md)
    * 매핑 관리
-       * 매핑 추가
+       * [매핑 추가](indices-put-mapping.md)
        * 매핑 조회
        * 속성 매핑 조회
        * 타입 유무확인
