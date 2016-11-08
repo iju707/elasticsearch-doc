@@ -32,4 +32,5 @@
        * [인덱스 롤오버](indices-rollover-index.md)
    * 매핑 관리
        * 매핑 추가
+       * 매핑 조회
 
