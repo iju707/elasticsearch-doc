@@ -32,7 +32,7 @@
        * [인덱스 롤오버](indices-rollover-index.md)
    * 매핑 관리
        * [매핑 추가](indices-put-mapping.md)
-       * 매핑 조회
+       * [매핑 조회](indices-get-mapping.md)
        * 속성 매핑 조회
        * 타입 유무확인
 
