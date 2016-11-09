@@ -33,6 +33,6 @@
    * 매핑 관리
        * [매핑 추가](indices-put-mapping.md)
        * [매핑 조회](indices-get-mapping.md)
-       * [속성 매핑 조회](indices-get-field-mapping.md)
+       * [필드 매핑 조회](indices-get-field-mapping.md)
        * 타입 유무확인
 
