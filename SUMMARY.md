@@ -36,4 +36,5 @@
        * [필드 매핑 조회](indices-get-field-mapping.md)
        * [타입 유무확인](indices-types-exists.md)
    * 별칭 관리
+       * 인덱스 별치
 
