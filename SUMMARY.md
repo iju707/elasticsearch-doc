@@ -40,6 +40,6 @@
    * 인덱스 설정
        * [인덱스 설정 수정](indices-update-settings.md)
        * [설정 조회](indices-get-settings.md)
-       * 분석
+       * [분석](indices-analyze.md)
        * 인덱스 템플릿
 
