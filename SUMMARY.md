@@ -37,4 +37,5 @@
        * [타입 유무확인](indices-types-exists.md)
    * 별칭 관리
        * [인덱스 별칭](indices-aliases.md)
+   * 인덱스 설정
 
