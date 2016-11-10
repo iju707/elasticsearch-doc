@@ -111,3 +111,164 @@ curl -XPOST 'localhost:9200/_aliases?pretty' -d'
     ]
 }'
 ```
+## 별칭 추가
+다음과 같은 형식으로 별칭을 추가할 수 있습니다.
+```
+PUT /{index}/_alias/{name}
+```
+여기서
+* ```index``` 참조될 인덱스 이름. ```*``` 또는 ```_all``` 또는 와일드카드방식 또는 쉼표(,)로 구분된 목록을 사용할 수 있습니다.
+* ```name``` 별칭의 이름으로 필수값입니다.
+* ```routing``` 별칭에 적용될 라우팅 값입니다. (선택)
+* ```filter``` 별칭에 적용될 필터링 값입니다. (선택)
+
+또한 복수형태인 ```_aliases```를 사용할 수 도 있습니다.
+
+### 예시
+시간 기반 별칭
+```
+curl -XPUT 'localhost:9200/logs_201305/_alias/2013?pretty'
+```
+사용자 기반 별칭
+1. ```user_id``` 필드를 가진 매핑정보가 있는 인덱스를 생성합니다.
+```
+curl -XPUT 'localhost:9200/users?pretty' -d'
+{
+    "mappings" : {
+        "user" : {
+            "properties" : {
+                "user_id" : {"type" : "integer"}
+            }
+        }
+    }
+}'
+```
+2. 특정 사용자를 기준으로 별칭을 지정합니다.
+```
+curl -XPUT 'localhost:9200/users/_alias/user_12?pretty' -d'
+{
+    "routing" : "12",
+    "filter" : {
+        "term" : {
+            "user_id" : 12
+        }
+    }
+}'
+```
+
+## 인덱스 생성시 별칭 지정
+[인덱스를 생성](indices-create-index.md#create-index-aliases)할 때 별칭정보를 추가할 수 있습니다.
+```
+curl -XPUT 'localhost:9200/logs_20162801?pretty' -d'
+{
+    "mappings" : {
+        "type" : {
+            "properties" : {
+                "year" : {"type" : "integer"}
+            }
+        }
+    },
+    "aliases" : {
+        "current_day" : {},
+        "2016" : {
+            "filter" : {
+                "term" : {"year" : 2016 }
+            }
+        }
+    }
+}'
+```
+## 별칭 삭제
+별칭 삭제 API는 다음과 같습니다.
+```
+DELETE /{index}/_alias/{name}
+```
+* ```index``` 참조될 인덱스 이름. ```*``` 또는 ```_all``` 또는 와일드카드방식 또는 쉼표(,)로 구분된 목록을 사용할 수 있습니다.
+* ```name``` 별칭 이름. ```*``` 또는 ```_all``` 또는 와일드카드방식 또는 쉼표(,)로 구분된 목록을 사용할 수 있습니다.
+
+역시 복수형으로 ```_aliases```를 사용할 수 있습니다. 예제로
+```
+curl -XDELETE 'localhost:9200/logs_20162801/_alias/current_day?pretty'
+```
+## 별칭 검색
+인덱스별칭 조회 API는 별칭이나 인덱스 이름으로 필터링 할 수 있습니다. 이 API는 마스터에 전달하여 요청된 인덱스별칭에 대해서 처리합니다. 그리고 검색된 인덱스 별칭만 표시합니다.
+
+가능한 옵션은
+* ```index``` 별칭을 가져올 인덱스의 이름입니다. 와일드카드나 쉼표(,)로 구분하여 목록으로 지정할 수 있습니다. 또는 인덱스의 별칭으로 사용할 수 있습니다.
+* ```alias``` 요청에 응답받을 별칭 이름입니다. 인덱스 옵션과 동일하게 와일드카드나 쉼표(,)로 구분된 목록을 지정할 수 있습니다.
+* ```ignore_unavailable``` 선택한 인덱스가 존재하지 않을 경우에 대한 옵션입니다. 만약 ```true```로 하면 그 인덱스들은 무시가 됩니다.
+
+기본적인 문법은 
+```
+GET /{index}/_alias/{alias}
+```
+입니다.
+### 예제
+```logs_20162801``` 인덱스의 모든 별칭을 조회하는 예제입니다.
+```
+curl -XGET 'localhost:9200/logs_20162801/_alias/*?pretty'
+```
+응답은 다음과 같습니다.
+```json
+{
+ "logs_20162801" : {
+   "aliases" : {
+     "2016" : {
+       "filter" : {
+         "term" : {
+           "year" : 2016
+         }
+       }
+     }
+   }
+ }
+}
+```
+또는 *2016* 이름을 가지는 모든 별칭을 조회하는 것 입니다.
+```
+curl -XGET 'localhost:9200/_alias/2016?pretty'
+```
+응답은 다음과 같습니다.
+```json
+{
+  "logs_20162801" : {
+    "aliases" : {
+      "2016" : {
+        "filter" : {
+          "term" : {
+            "year" : 2016
+          }
+        }
+      }
+    }
+  }
+}
+```
+또는 *20*으로 시작하는 모든 별칭을 조회하는 것 입니다.
+```
+curl -XGET 'localhost:9200/_alias/20*?pretty'
+```
+응답은 다음과 같습니다.
+```json
+{
+  "logs_20162801" : {
+    "aliases" : {
+      "2016" : {
+        "filter" : {
+          "term" : {
+            "year" : 2016
+          }
+        }
+      }
+    }
+  }
+}
+```
+## 별칭 유무확인
+인덱스 별칭 조회 API에서 HEAD method를 사용하여 유무를 확인할 수 있습니다. 다른 API와 동일하게 HTTP 응답코드로 결과가 반환됩니다. 있는 경우 '''200'', 없는 경우 '''404'''로 반환됩니다.
+```
+curl -XHEAD 'localhost:9200/_alias/2016?pretty'
+curl -XHEAD 'localhost:9200/_alias/20*?pretty'
+curl -XHEAD 'localhost:9200/logs_20162801/_alias/*?pretty'
+```
+> Windows 버전 curl의 경우 -XHEAD를 지원하지 않기 때문에, --head 옵션을 사용하면 됩니다.
