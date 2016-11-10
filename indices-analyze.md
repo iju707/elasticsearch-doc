@@ -125,3 +125,6 @@ curl -XGET 'localhost:9200/test/_analyze' -d '
 curl -XGET 'localhost:9200/_analyze?tokenizer=keyword&filter=lowercase&text=this+is+a+test'
 ```
 또한 하위 호환을 위하여, 문자열 파라미터를 Request Body에 추가할 수 있습니다. 이때는 JSON 포맷이 아닌 순수 문자열만 들어가게 됩니다.
+```
+curl -XGET 'localhost:9200/_analyze?tokenizer=keyword&filter=lowercase&char_filter=html_strip' -d 'this is a <b>test</b>'
+```
