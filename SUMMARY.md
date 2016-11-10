@@ -38,7 +38,7 @@
    * 별칭 관리
        * [인덱스 별칭](indices-aliases.md)
    * 인덱스 설정
-       * 인덱스 설정 수정
+       * [인덱스 설정 수정](indices-update-settings.md)
        * 설정 조회
        * 분석
        * 인덱스 템플릿
