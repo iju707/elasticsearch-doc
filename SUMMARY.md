@@ -41,6 +41,6 @@
        * [인덱스 설정 수정](indices-update-settings.md)
        * [설정 조회](indices-get-settings.md)
        * [분석](indices-analyze.md)
-           * 상세 분석
+           * [상세 분석](_explain_analyze.md)
        * 인덱스 템플릿
 
