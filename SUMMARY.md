@@ -46,7 +46,7 @@
    * 복제본 설정
        * [복제인덱스 복제](indices-shadow-replicas.md)
    * 모니터링
-       * 인덱스 통계
+       * [인덱스 통계](indices-stats.md)
        * 인덱스 세그먼트
        * 인덱스 복구
        * 인덱스 파편 정보
