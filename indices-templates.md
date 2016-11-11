@@ -123,4 +123,15 @@ curl -XPUT 'localhost:9200/_template/template_1?pretty' -d'
     "version": 123
 }'
 ```
-```version```을 확인하려면 ```filter_path``` 옵션을 사용하여 버전 정보만 추출한 결과를 
+```version```을 확인하려면 ```filter_path``` 옵션을 사용하여 [응답결과 필터링](common-options.md#common-options-response-filtering)하여 버전만 보실 수 있습니다.
+```
+curl -XGET 'localhost:9200/_template/template_1?filter_path=*.version&pretty'
+```
+위 결과는 다음과 같이 나옵니다.
+```json
+{
+  "template_1" : {
+    "version" : 123
+  }
+}
+```
