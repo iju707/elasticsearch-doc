@@ -44,5 +44,5 @@
            * [상세 분석](_explain_analyze.md)
        * [인덱스 템플릿](indices-templates.md)
    * 복제본 설정
-       * 복제인덱스 복제
+       * [복제인덱스 복제](indices-shadow-replicas.md)
 
