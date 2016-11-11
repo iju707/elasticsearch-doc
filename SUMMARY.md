@@ -46,4 +46,5 @@
    * 복제본 설정
        * [복제인덱스 복제](indices-shadow-replicas.md)
    * 모니터링
+       * 인덱스 통계
 
