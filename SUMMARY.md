@@ -43,4 +43,5 @@
        * [분석](indices-analyze.md)
            * [상세 분석](_explain_analyze.md)
        * [인덱스 템플릿](indices-templates.md)
+   * 복제본 설정
 
