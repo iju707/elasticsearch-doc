@@ -45,4 +45,5 @@
        * [인덱스 템플릿](indices-templates.md)
    * 복제본 설정
        * [복제인덱스 복제](indices-shadow-replicas.md)
+   * 모니터링
 
