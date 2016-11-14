@@ -167,3 +167,18 @@ GET _recovery?human&detailed=true
 | ```active_only``` | 현재 수행중인 복구에 대한 정보만 표출합니다. 기본값 : *false* |
 
 출력결과에 대한 상세정보는 다음과 같습니다.
+
+| 속성명 | 내용 |
+| -- | -- |
+| ```id``` | 파편 ID |
+| ```type``` | 복구 유형 (*store, snapshot, replica, relocating*) |
+| ```stage``` | 복구 단계<br><ul><li>init : 복구가 아직 진행안됨</li><li>index : 인덱스의 메타데이터를 읽고 원본에서 대상으로 복사</li><li>start : 엔진 시작, 사용하기 위해 인덱스을 열기</li><li>translog : 트랜잭션 로그 재실행</li><li>finalize : 최종 복구 마무리</li><li>done : 복구 완료</li></ul> |
+| ```primary``` | 만약 파편이 주파편이면 *true* 아니면 *false* |
+| ```start_time``` | 복구 시작시간 |
+| ```stop_time``` | 복구 완료시간 |
+| ```total_time_in_millis``` | 밀리초 단위 파편 복구 전체 시간 |
+| ```source``` | 복구 원본 <br><ul><li>스냅샷으로 부터 복구할 경우 저장소 설명</li><li>다른 경우에는 원본 노드의 설명</li></ul> |
+| ```target``` | 대상 노드 |
+| ```index``` | 물리적 인덱스 복구에 관련된 통계 |
+| ```translog``` | 트랜잭션 복구에 관련된 통계 |
+| ```start``` | 인덱스를 열고 시작하기 까지 시간에 관련된 통계 |
