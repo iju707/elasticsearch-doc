@@ -49,5 +49,5 @@
        * [인덱스 통계](indices-stats.md)
        * [인덱스 세그먼트](indices-segments.md)
        * [인덱스 복구](indices-recovery.md)
-       * [인덱스 파편 정보](indices-shards-stores.md)
+       * [인덱스 파편 기억장치](indices-shards-stores.md)
 
