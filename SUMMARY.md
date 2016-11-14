@@ -50,4 +50,5 @@
        * [인덱스 세그먼트](indices-segments.md)
        * [인덱스 복구](indices-recovery.md)
        * [인덱스 파편 저장소](indices-shards-stores.md)
+   * 상태관리
 
