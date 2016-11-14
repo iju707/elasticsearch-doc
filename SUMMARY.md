@@ -48,6 +48,6 @@
    * 모니터링
        * [인덱스 통계](indices-stats.md)
        * [인덱스 세그먼트](indices-segments.md)
-       * 인덱스 복구
+       * [인덱스 복구](indices-recovery.md)
        * 인덱스 파편 정보
 
