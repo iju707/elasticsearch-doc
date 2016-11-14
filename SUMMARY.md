@@ -51,4 +51,5 @@
        * [인덱스 복구](indices-recovery.md)
        * [인덱스 파편 저장소](indices-shards-stores.md)
    * 상태관리
+       * 캐시 초기화
 
