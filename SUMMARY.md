@@ -54,6 +54,6 @@
        * [캐시 초기화](indices-clearcache.md)
        * [인덱스 정리](indices-flush.md)
            * [동기화된 정리](indices-synced-flush.md)
-       * 인덱스 갱신
+       * [인덱스 갱신](indices-refresh.md)
        * 인덱스 강제병합
 
