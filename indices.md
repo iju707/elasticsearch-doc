@@ -35,6 +35,6 @@
 
 ## 상태관리
 * [캐시 초기화](indices-clearcache.md)
-* [인덱스 갱신](indices-refresh.md)
 * [인덱스 정리](indices-flush.md)
+* [인덱스 갱신](indices-refresh.md)
 * [인덱스 강제병합](indices-forcemerge.md)
