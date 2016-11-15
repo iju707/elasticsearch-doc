@@ -50,4 +50,84 @@ curl -XGET 'localhost:9200/twitter/_stats/commit?level=shards&pretty'
 1. 동기화된 정리는 비용이 많이 드는 작업입니다. 진행중인 색인 작업이 있다면 그 작업이 특정 파편에 대한 동기화된 정리의 실패원인이 됩니다. 다시 말해 만약 파편이 동기화된 정리작업 중이라면 다른 파편은 할 수 없다는 것 입니다. 아래에 더 자세히 알아보겠습니다.
 2. ```sync_id```는 파편이 다시 정리된다면 삭제됩니다. 정리작업이 동기화 식별자가 저장된 루씬 커밋 위치를 교체하기 때문입니다. 트랜젝션로그의 커밋되지않은 동작은 동기화 식별자를 지우지 않습니다. 실사용에서는 인덱스의 색인동작은 언제든 Elasticsearch에 의해 발생된 정리작업으로 인하여 동기화 식별자를 삭제하게 됩니다.
 
-> 
+> 색인중에 동기화된 정리를 요청해도 상관은 없습니다. 만약 파편이 대기상태면 성공할 것이고 그렇지 않으면 실패할 것 입니다. 성공한 파편은 더 빠른 복구시간을 가지게 될 것 입니다.
+
+```
+curl -XPOST 'localhost:9200/twitter/_flush/synced?pretty'
+```
+응답결과에는 얼마만큼의 파편이 동기화된 정리에 성공 또는 실패하였는지에 대한 정보가 있습니다.
+
+아래 예제는 두개의 파편과 한개의 복제본으로 구성된 인덱스의 동기화된 정리가 성공한 경우입니다.
+```json
+{
+   "_shards": {
+      "total": 2,
+      "successful": 2,
+      "failed": 0
+   },
+   "twitter": {
+      "total": 2,
+      "successful": 2,
+      "failed": 0
+   }
+}
+```
+아래는 진행중인 동작으로 인하여 한개의 파편그룹이 오류가 발생한 경우입니다.
+```json
+{
+   "_shards": {
+      "total": 4,
+      "successful": 2,
+      "failed": 2
+   },
+   "twitter": {
+      "total": 4,
+      "successful": 2,
+      "failed": 2,
+      "failures": [
+         {
+            "shard": 1,
+            "reason": "[2] ongoing operations on primary"
+         }
+      ]
+   }
+}
+```
+> 위 오류는 색인 작업이 동시에 진행되어 동기화된 정리가 실패했다는 것을 보여줍니다. HTTP 응답코드는 ```404 CONFLICT```으로 출력됩니다.
+
+때때로 실패는 파편본에 한정될 수 있습니다. 실패한 사본은 빠른 복구에 적합하지 않지만 성공한 사본은 계속 복구를 진행할 수 있습니다. 위 경우 다음과 같은 응답결과가 발생합니다.
+```json
+{
+   "_shards": {
+      "total": 4,
+      "successful": 1,
+      "failed": 1
+   },
+   "twitter": {
+      "total": 4,
+      "successful": 3,
+      "failed": 1,
+      "failures": [
+         {
+            "shard": 1,
+            "reason": "unexpected error",
+            "routing": {
+               "state": "STARTED",
+               "primary": false,
+               "node": "SZNr2J_ORxKTLUCydGX4zA",
+               "relocating_node": null,
+               "shard": 1,
+               "index": "twitter"
+            }
+         }
+      ]
+   }
+}
+```
+> 파편본에 대한 동기화된 정리가 실패하는 경우 HTTP 응답코트는 ```409 CONFLICT```로 발생합니다.
+
+동기화된 정리 API는 한번의 요청으로 한개 이상의 인덱스를 처리할 수 있습니다. 또는 ```_all```을 사용하여 전체 인덱스 처리도 가능합니다.
+```
+curl -XPOST 'localhost:9200/kimchy,elasticsearch/_flush/synced?pretty'
+curl -XPOST 'localhost:9200/_flush/synced?pretty'
+```
