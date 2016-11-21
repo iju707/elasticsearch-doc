@@ -1,7 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-   * API 규칙
 * [시작하기](getting-started.md)
    * [기본 개념](_basic_contcepts.md)
    * [설치하기](_installation.md)
@@ -22,6 +21,7 @@
        * [필터링을 해보자](_executing_filters.md)
        * [집계를 해보자](_executing_aggregations.md)
    * [결론](_conclusion.md)
+* API 규칙
 * [인덱스 API](indices.md)
    * 인덱스 관리
        * [인덱스 생성](indices-create-index.md)
