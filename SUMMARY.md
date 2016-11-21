@@ -21,7 +21,7 @@
        * [필터링을 해보자](_executing_filters.md)
        * [집계를 해보자](_executing_aggregations.md)
    * [결론](_conclusion.md)
-* API 규칙
+* [API 규칙](api-conventions.md)
 * [인덱스 API](indices.md)
    * 인덱스 관리
        * [인덱스 생성](indices-create-index.md)
