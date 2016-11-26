@@ -23,7 +23,7 @@
    * [결론](_conclusion.md)
 * [API 규칙](api-conventions.md)
    * [다중 인덱스](multi-index.md)
-   * 인덱스명에 날짜연산 지원
+   * [인덱스명에 날짜연산 지원](date-math-index-names.md)
 * [인덱스 API](indices.md)
    * 인덱스 관리
        * [인덱스 생성](indices-create-index.md)
