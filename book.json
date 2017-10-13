@@ -1,1 +1,11 @@
-{}
+{
+    "plugins": ["adsense"],
+    "pluginsConfig": {
+        "adsense": {
+          "client": "ca-pub-[YOUR_CODE]",
+          "slot": "[YOUR_CODE]",
+          "format": "auto",
+          "element": ".page-inner h1"
+        }
+    }
+}
