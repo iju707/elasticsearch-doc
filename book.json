@@ -2,8 +2,8 @@
     "plugins": ["adsense"],
     "pluginsConfig": {
         "adsense": {
-          "client": "ca-pub-[YOUR_CODE]",
-          "slot": "[YOUR_CODE]",
+          "client": "ca-pub-1537305666483956",
+          "slot": "6991744222",
           "format": "auto",
           "element": ".page-inner h1"
         }
