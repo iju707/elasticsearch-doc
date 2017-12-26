@@ -1,5 +1,5 @@
 {
-    "plugins": ["adsense"],
+    "plugins": ["adsense", "analytics"],
     "pluginsConfig": {
       "adsense": {
         "client": "ca-pub-1537305666483956",
@@ -7,6 +7,9 @@
         "format": "auto",
         "element": ".page-inner section",
         "position": "top"
+      },
+      "analytics" : {
+        "google" : "UA-41121759-9"        
       }
     }
 }
