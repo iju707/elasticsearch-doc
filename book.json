@@ -1,5 +1,5 @@
 {
-    "plugins": ["adsense", "analytics"],
+    "plugins": ["adsense", "ga", "sitemap"],
     "pluginsConfig": {
       "adsense": {
         "client": "ca-pub-1537305666483956",
@@ -8,8 +8,11 @@
         "element": ".page-inner section",
         "position": "top"
       },
-      "analytics" : {
-        "google" : "UA-41121759-9"        
+      "ga" : {
+        "token" : "UA-41121759-9"        
+      },
+      "sitemap": {
+          "hostname": "https://elasticsearch.oofbird.net/"
       }
     }
 }
