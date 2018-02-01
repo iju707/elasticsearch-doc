@@ -13,3 +13,6 @@ sysctl -w vm.max_map_count=262144
 RPM 또는 Debian 패키지를 통해 설치할 경우에는 자동으로 설정하기 때문에 추가적인 설정은 필요하지 않습니다.
 
 > **역주** 보통 Docker Container로 Elasticsearch를 구동할 때 발생합니다.
+
+
+
