@@ -21,6 +21,9 @@
     * [필터링을 해보자](_executing_filters.md)
     * [집계를 해보자](_executing_aggregations.md)
   * [결론](_conclusion.md)
+* [설치하기](setup.md)
+  * [중요한 시스템 설정](setup/system_config.md)
+    * [Virtual memory](setup/system_config/vm_max_map_count.md)
 * [API 규칙](api-conventions.md)
   * [다중 인덱스](multi-index.md)
   * [인덱스명에 날짜연산 지원](date-math-index-names.md)
@@ -59,7 +62,4 @@
       * [동기화된 정리](indices-synced-flush.md)
     * [인덱스 갱신](indices-refresh.md)
     * [인덱스 강제병합](indices-forcemerge.md)
-* [설치하기](setup.md)
-  * [중요한 시스템 설정](setup/system_config.md)
-    * [Virtual memory](setup/system_config/vm_max_map_count.md)
 
