@@ -49,8 +49,6 @@
     * [분석](indices-analyze.md)
       * [상세 분석](_explain_analyze.md)
     * [인덱스 템플릿](indices-templates.md)
-  * 복제본 설정
-    * [복제인덱스 복제](indices-shadow-replicas.md)
   * 모니터링
     * [인덱스 통계](indices-stats.md)
     * [인덱스 세그먼트](indices-segments.md)
