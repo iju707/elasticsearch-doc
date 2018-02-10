@@ -35,4 +35,15 @@ curl -XGET 'localhost:9200/%3Clogstash-%7Bnow%2Fd%7D%3E/_search?pretty' -d'
 > * ```+``` ```%2B```
 > * ```:``` ```%3A```
 
+아래는 다른 형태의 날짜 계산식이 포함된 인덱스 명칭들이며, 최종 표현된 인덱스명은 현재 시간인 2024년 3월 22일 UTC 기준으로 하겠습니다.
+
+| Expression | Resolves to |
+| :--- | :--- |
+| `<logstash-{now/d}>` | `logstash-2024.03.22` |
+| `<logstash-{now/M}>` | `logstash-2024.03.01` |
+| `<logstash-{now/M{YYYY.MM}}>` | `logstash-2024.03` |
+| `<logstash-{now/M-1M{YYYY.MM}}>` | `logstash-2024.02` |
+| `<logstash-{now/d{YYYY.MM.dd|+12:00}}>` | `logstash-2024.03.23` |
+
+인덱스 이름 템플릿에 `{`와 `}`를 사용하기 위해서는 백슬래시 `\` 를 사용하시면 됩니다.
 
