@@ -35,6 +35,7 @@
     * [인덱스 유무확인](indices-exists.md)
     * [인덱스 닫기/열기](indices-open-close.md)
     * [인덱스 축소](indices-shrink-index.md)
+    * [인덱스 분할](indices-split-index.md)
     * [인덱스 롤오버](indices-rollover-index.md)
   * 매핑 관리
     * [매핑 추가](indices-put-mapping.md)
