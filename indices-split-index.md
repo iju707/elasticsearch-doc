@@ -46,4 +46,54 @@ curl -XPUT 'localhost:9200/my_source_index/_settings?pretty' -H 'Content-Type: a
 }'
 ```
 
-> 
+> 이 인덱스에 인덱스 삭제와 같은 메타데이터 변경은 가능하지만 쓰기 동작을 못하도록 설정합니다.
+
+## 인덱스 분할 {#_splitting_an_index}
+
+```my_source_index```라는 인덱스를 ```my_target_index```라는 새로운 인덱스로 분할하고자 하는 경우 다음과 같습니다.
+
+```
+curl -XPOST 'localhost:9200/my_source_index/_split/my_target_index?pretty' -H 'Content-Type: application/json' -d'
+{
+  "settings": {
+    "index.number_of_shards": 2
+  }
+}'
+```
+
+위 요청에 대한 응답은 신규 인덱스가 클러스터 상태에 추가되면 바로 반환 됩니다. - 분할 동작이 시작될 때까지 기다리진 않습니다.
+
+> **중요**
+> 인덱스는 다음의 요구사항을 만족할 때만 분할처리 됩니다.
+> * 신규 인덱스는 존재하면 안됩니다.
+> * 인덱스는 신규 인덱스보다 적은 주파편을 가져야 합니다.
+> * 신규 인덱스의 주 파편수는 기존 인덱스의 주 파편수에 대한 배수가 되어야 합니다.
+> * 복제 처리를 진행할 노드는 기존 인덱스의 두번 복사될 만큼의 충분한 공간을 가지고 있어야 합니다.
+
+```_split``` API는 [인덱스 생성 API](indices-create-index.md)와 유사하며, 신규 인덱스에 ```settings```와 ```aliases``` 파라미터를 지원합니다.
+
+```
+curl -XPOST 'localhost:9200/my_source_index/_split/my_target_index?pretty' -H 'Content-Type: application/json' -d'
+{
+  "settings": {
+    "index.number_of_shards": 5 
+  },
+  "aliases": {
+    "my_search_indices": {}
+  }
+}'
+```
+
+> ```index.number_of_shards```는 신규 인덱스의 파편수 입니다. 대상 인덱스의 파편수에 배수가 되어야 합니다.
+
+> **참고** ```_split``` 요청에 매핑관련은 정의될 수 없습니다. ```index.analysis.*```와 ```index.similarity.*``` 설정은 대상 인덱스의 설정으로 덮어지게 됩니다.
+
+## 분할 처리 모니터링 {#_monitoring_the_split_process}
+
+분할 처리는 [_cat recovery API](cat-recovery.md)로 모니터링할 수 있습니다. 또는 [클러스터 상태 API](cluster-health.md)를 가지고 ```wait_for_status```를 ```yellow```로 설정해서 모든 주파편이 할당될 때까지 대기할 수 있습니다.
+
+```_split``` API는 다른 파편이 할당되기전, 클러스터 상태에 신규 인덱스가 추가되면 바로 결과를 반환합니다. 이때 모든 파편은 ```unassigned``` 상태가 됩니다. 다른 이유로 신규 인덱스가 할당이 안되면 해당 노드에 할당될 때까지 주파편은 ```unassigned``` 상태로 남게 됩니다.
+
+주 파편이 할당되면, ```initializing``` 상태로 변경이 되며, 분할 처리가 시작됩니다. 분할이 완료되면 파편은 ```active```로 바뀌게 됩니다. 그럼 Elasticsearch는 다른 복제본 할당을 시도하며, 주 파편을 다른 노드에 이동할지 결정합니다.
+
+## 
