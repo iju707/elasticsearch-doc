@@ -102,3 +102,5 @@ curl -XPUT 'localhost:9200/my_index/_mapping/user?pretty' -d'
 > ```user_id```에 ```ignore_above``` 속성을 기본값인 0에서 100으로 변경합니다.
 
 각각의 [매핑 파라미터](mapping-params.md)는 기존의 필드에 수정이 되던 안되던 표시할 수 있습니다.
+
+> 2018-04-06 : 6.2 버전
