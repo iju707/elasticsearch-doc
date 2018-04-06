@@ -96,4 +96,9 @@ curl -XPOST 'localhost:9200/my_source_index/_split/my_target_index?pretty' -H 'C
 
 주 파편이 할당되면, ```initializing``` 상태로 변경이 되며, 분할 처리가 시작됩니다. 분할이 완료되면 파편은 ```active```로 바뀌게 됩니다. 그럼 Elasticsearch는 다른 복제본 할당을 시도하며, 주 파편을 다른 노드에 이동할지 결정합니다.
 
-## 
+## 파편활성화 대기 {#_wait_for_active_shards_3}
+
+인덱스 분할 명령은 파편 분할을 위해 새로운 인덱스를 생성하기 때문에, 인덱스 생성시 [파편활성화 대기](indices-create-index.md#create-index-wait-for-active-shards) 설정을 따라갑니다.
+
+> 2018-04-06 : 6.2 버전
+
